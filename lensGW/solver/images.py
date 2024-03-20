@@ -14,9 +14,9 @@ def OneDeflector(source_ra,
     solverKwargs = {'Scaled'           : kwargs['Scaled'],
                     'ScaleFactor'      : kwargs['ScaleFactor'],
                     'SearchWindowMacro': kwargs['SearchWindowMacro'],
-                    'PixelsMacro'      : 10**2,
-                    'PrecisionLimit'   : 10**(-10),
-                    'OverlapDistMacro' : 10**(-15), # prescription: solutions whose distance is less than 10**(-15) rad (\sim 2*1.e-4 micro arcsec) are considered overlaps
+                    'PixelsMacro'      : 10**4,
+                    'PrecisionLimit'   : 10**(-13),
+                    'OverlapDistMacro' : 10**(-13), # prescription: solutions whose distance is less than 10**(-15) rad (\sim 2*1.e-4 micro arcsec) are considered overlaps
                     'NearSource'       : False,
                     'Optimization'     : kwargs['Optimization'],
                     'Verbose'          : False} 
@@ -45,10 +45,10 @@ def OneDeflector(source_ra,
     # repeat for the optimization-related settings if the optimization mode is active
     if solverKwargs['Optimization']:                           
         optimizationKwargs = {'OptimizationWindowMacro': 2,
-                              'OptimizationPixelsMacro': 30,
+                              'OptimizationPixelsMacro': 90,
                               'MinDistMacro': None,
                               'ImprovementMacro': None,
-                              'OptimizationPrecisionLimitMacro': 10**(-20)}
+                              'OptimizationPrecisionLimitMacro': 10**(-15)}
                               
         # optimization kwargs that need rescaling if Scaled is True
         ToBeScaledOptimization = ['MinDistMacro', 'OptimizationPrecisionLimitMacro']
@@ -182,9 +182,9 @@ def microimages(source_ra,
                     'MacroIndex'       : [0],                
                     'ImgIndex'         : None,  
                     'SearchWindow'     : kwargs['SearchWindow'],
-                    'Pixels'           : 10**3, 
-                    'OverlapDist'      : 10**(-15), 
-                    'PrecisionLimit'   : 10**(-20), 
+                    'Pixels'           : 10**5, 
+                    'OverlapDist'      : 10**(-13), 
+                    'PrecisionLimit'   : 10**(-15), 
                     'Optimization'     : kwargs['Optimization'],
                     'Verbose'          : False} 
     
@@ -251,7 +251,7 @@ def microimages(source_ra,
         # update solverKwargs for the complete model analysis 
         if solverKwargs['Optimization']:                           
             optimizationKwargs = {'OptimizationWindow': 2,
-                                  'OptimizationPixels': 30,
+                                  'OptimizationPixels': 60,
                                   'MinDist': None,
                                   'Improvement': None,
                                   'OptimizationPrecisionLimit': 10**(-20)}
