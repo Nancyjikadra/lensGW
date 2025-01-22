@@ -1,7 +1,6 @@
 # Dependencies for LensGW
 ![alt text](https://github.com/SSingh087/lensGW/blob/main/lensGW.png)
-Here’s a detailed **README.md** file for the **Gravitational Wave Classification Project**:  
-
+ 
 ---
 
 # Gravitational Wave Classification  
@@ -132,10 +131,3 @@ Contributions are welcome! To contribute:
 ## License  
 
 This project is licensed under the [MIT License](LICENSE).  
-
----
-
-## Acknowledgements  
-
-- **University of Glasgow**: Special thanks to the PhD researcher for collaboration and guidance.  
-- The contributors and developers who supported this project.  
